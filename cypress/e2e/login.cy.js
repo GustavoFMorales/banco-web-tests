@@ -1,10 +1,12 @@
 describe('Login', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4000')
+    cy.visit('http://localhost:4000');
+    cy.screenshot('Apos-visitar-a-página-de-login');
   });
   it('Login com dados váldos devem permitir entrada no sistema', () => {
     cy.get('#username').click().type('gustavo');
     cy.get('#senha').click().type('123456');
+    cy.screenshot('Apos-preencher-os-dados-de-login');
     cy.get('#login-section > .btn').click();
 
     // Tem uma função chamada contains que verifica se o texto está visivel na tela 
