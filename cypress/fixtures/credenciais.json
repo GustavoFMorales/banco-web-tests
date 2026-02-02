@@ -1,0 +1,10 @@
+{
+    "valida": {
+        "usuario": "gustavo",
+        "senha": "123456"
+    },
+    "invalida": {
+        "usuario": "teste",
+        "senha": "1234"
+    }
+}
