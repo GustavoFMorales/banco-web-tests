@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run --env URL=http://localhost:4000",
-    "test-prod": "cypress run --env URL=http://www.juliodelima.com.br",
+    "test-prod": "cypress run",
     "cyheaded": "cypress run --headed",
     "cyopen": "cypress open --env URL=http://localhost:4000"
   },
