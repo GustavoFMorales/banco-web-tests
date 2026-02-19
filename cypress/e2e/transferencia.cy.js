@@ -1,5 +1,6 @@
 describe('Transferência', () => {
     beforeEach(() => {
+        cy.visit('/');
         cy.login();
 
     });
@@ -15,11 +16,12 @@ describe('Transferência', () => {
         cy.get('@campo-conta-destino').contains('paola com saldo de R$ 23000.00 (Ativa)').click(); */
 
 
-        cy.AdicionaConta('label[for="conta-origem"]', 'campo-conta-origem', 'gustavo');
-        cy.AdicionaConta('label[for="conta-destino"]', 'campo-conta-destino', 'paola'); 
+        cy.AdicionaConta('label[for="conta-origem"]', 'campo-conta-origem', 'paola');
+        cy.AdicionaConta('label[for="conta-destino"]', 'campo-conta-destino', 'gustavo'); 
         cy.get('#valor').click().type('500');
         cy.get('button').contains('Transferir').click();
-        cy.get('.toast').should('have.text', 'Transferência realizada!'); // Verifica se a mensagem de sucesso está visível na tela
+        //cy.get('.toast').should('have.text', 'Transferência realizada!'); // Verifica se a mensagem de sucesso está visível na tela
+        cy.verificarMensagemToast('Transferência realizada!');
 
 
     });
